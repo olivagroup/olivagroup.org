@@ -12,6 +12,7 @@
     html, body {
       margin: 0;
       padding: 0;
+      height: 100%;
       font-family: Arial, sans-serif;
       background: #f9f9f9;
       color: #333;
@@ -20,7 +21,9 @@
     .container {
       max-width: 900px;
       margin: 0 auto;
-      padding: 2rem 1rem;
+      padding: 2rem 1rem 4rem; /* bottom padding to avoid content behind footer */
+      min-height: 100vh; /* full viewport height */
+      box-sizing: border-box;
     }
 
     main {
@@ -78,13 +81,17 @@
     }
 
     footer {
-      text-align: center;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
       background: #2c3e50;
       color: white;
       padding: 1rem 0;
       font-size: 0.9rem;
-      margin-top: 2rem;
-      width: 100%;
+      text-align: center;
+      box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+      z-index: 1000;
     }
   </style>
 </head>
@@ -99,12 +106,11 @@
       <h2>Google Sheets Add-ons</h2>
       <ul class="addon-list">
         <li>
-          <strong>Localization for App Store Connect App Version By OLIVA</strong><br />
-          (<a href="https://workspace.google.com/marketplace" target="_blank">Coming Soon</a>)
+          <strong>Localization for App Store Connect App Version By OLIVA</strong> (<a href="https://workspace.google.com/marketplace" target="_blank">Coming Soon</a>)
           <ul style="margin-top: 0.5rem; margin-left: 1rem;">
-            <li><a href="#">Privacy Policy for Localization for App Store Connect App Version By OLIVA</a></li>
-            <li><a href="#">Support Page for Localization for App Store Connect App Version By OLIVA</a></li>
-            <li><a href="#">Terms of Service for Localization for App Store Connect App Version By OLIVA</a></li>
+            <li><a href="localization-appstore-privacy-policy.html">Privacy Policy for Localization for App Store Connect App Version By OLIVA</a></li>
+            <li><a href="localization-appstore-support.html">Support Page for Localization for App Store Connect App Version By OLIVA</a></li>
+            <li><a href="localization-appstore-terms-of-service.html">Terms of Service for Localization for App Store Connect App Version By OLIVA</a></li>
           </ul>
         </li>
       </ul>
@@ -112,7 +118,7 @@
   </div>
 
   <footer>
-    &copy; 2025 OLIVA Group. All rights reserved.
+    &copy; 2025 OLIVA Group
   </footer>
 </body>
 </html>
