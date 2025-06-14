@@ -27,9 +27,13 @@
     margin-bottom: 0.5rem;
     color: #2c3e50;
   }
-  p {
+  p.description {
     font-size: 1.2rem;
-    margin-bottom: 1.5rem;
+    margin: 0 0 1.5rem 0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #555;
   }
   ul {
     list-style: none;
@@ -41,11 +45,11 @@
     margin: 0.75rem 0;
   }
   
-  /* ADD THIS: bigger space after the first list item */
+  /* bigger space after the first list item */
   ul li:first-child {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
   
   a {
     text-decoration: none;
@@ -68,6 +72,9 @@
 <body>
   <main>
     <h1>OLIVA Group</h1>
+    <p class="description">
+      Welcome to OLIVA GROUP, a team of passionate professionals with solid backgrounds in software development, engineering, management, and design, dedicated to creating innovative AI-inspired mobile applications and software add-ons.
+    </p>
     <ul>
       <li><a href="mobile-apps.html">Mobile App Development<br>(Android & iOS)</a></li>
       <li><a href="sheet-addons.html">Google Sheets Add-Ons</a></li>
