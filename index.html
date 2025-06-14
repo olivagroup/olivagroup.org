@@ -1,14 +1,73 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Oliva Group</title>
-  </head>
-  <body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Oliva Group</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #f9f9f9;
+      color: #333;
+    }
+    main {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 2rem;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      color: #2c3e50;
+    }
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 auto;
+      max-width: 300px;
+    }
+    ul li {
+      margin: 0.75rem 0;
+    }
+    a {
+      text-decoration: none;
+      color: #2980b9;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: #1abc9c;
+    }
+    footer {
+      background: #2c3e50;
+      color: white;
+      padding: 1rem 0;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <main>
     <h1>Welcome to Oliva Group</h1>
     <p>We specialize in:</p>
     <ul>
       <li><a href="mobile-apps.html">Mobile App Development (Android & iOS)</a></li>
       <li><a href="sheet-addons.html">Google Sheets Add-Ons</a></li>
     </ul>
-  </body>
+  </main>
+  <footer>
+    &copy; 2025 Oliva Group
+  </footer>
+</body>
 </html>
