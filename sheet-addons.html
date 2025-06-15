@@ -21,9 +21,8 @@
     .container {
       max-width: 900px;
       margin: 0 auto;
-      padding: 2rem 1rem 4rem; /* bottom padding to avoid content behind footer */
-      min-height: 100vh; /* full viewport height */
-      box-sizing: border-box;
+      padding: 2rem 1rem 6rem;
+      min-height: 100vh;
     }
 
     main {
@@ -93,6 +92,17 @@
       box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
       z-index: 1000;
     }
+
+    .info-section {
+      text-align: left;
+      margin-top: 2rem;
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .info-section a {
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
@@ -114,6 +124,33 @@
           </ul>
         </li>
       </ul>
+
+      <div class="info-section">
+        <h3>About the Add-on</h3>
+        <p>
+          The "Localization for App Store Connect App Version by OLIVA" Google Sheets add-on helps developers efficiently translate and update their iOS app descriptions in multiple languages using Google Translate and Apple’s App Store Connect API.
+        </p>
+        <p>
+          This tool reads app metadata from your spreadsheet, sends it to Google Translate for localization, then pushes updates to App Store Connect. At the end of the process, it sends a summary email listing all apps retrieved and those successfully updated.
+        </p>
+
+        <h3>How We Use Your Data</h3>
+        <p>
+          This add-on accesses the following data only as needed to complete its functionality:
+        </p>
+        <ul>
+          <li>Reads spreadsheet content to extract app metadata</li>
+          <li>Calls external APIs (Apple & Google Translate) to perform updates</li>
+          <li>Sends an email report to your Google Account address via MailApp</li>
+        </ul>
+        <p>
+          Your data is never stored or shared outside of these purposes. Email addresses are used solely to send execution results to the current user.
+        </p>
+
+        <p>
+          🔒 <a href="sheet-addons-localization-appstore-privacy-policy.html" target="_blank">View our Privacy Policy</a>
+        </p>
+      </div>
     </main>
   </div>
 
