@@ -117,7 +117,7 @@ ignitemediatech.com, pub_11113, RESELLER
 ignitemediatech.com, pub_11115, RESELLER
 iion.io, 10162, RESELLER
 improvedigital.com, 1114, RESELLER
-improvedigital.com, 1234, DIRECT
+improvedigital.com, 1234, RESELLER
 improvedigital.com, 1408, RESELLER
 improvedigital.com, 1664, RESELLER
 improvedigital.com, 2180, RESELLER
@@ -227,7 +227,7 @@ opera.com, pub6871903319744, RESELLER, 55a0c5fd61378de3
 opera.com, pub7275292332480, RESELLER, 55a0c5fd61378de3
 opera.com,pub10084465274176,RESELLER,55a0c5fd61378de3
 opera.com,pub6148735850944,RESELLER,55a0c5fd61378de3
-opera.com,pub7507776842240,DIRECT,55a0c5fd61378de3
+opera.com,pub7507776842240,RESELLER,55a0c5fd61378de3
 orangeclickmedia.com, c-1181, RESELLER
 orangeclickmedia.com, C-1181, RESELLER
 outbrain.com, 0023749a2264ea0429a71b54ac9ca0de9a, RESELLER
