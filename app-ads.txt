@@ -138,7 +138,7 @@ inmobi.com, 791b84bdd791470faa8dca5f04e6a83b, RESELLER, 83e75a7ae333ca9d
 inmobi.com, b01aa06531c543d8a5fb9982f60afb00, RESELLER, 83e75a7ae333ca9d
 inmobi.com, edd282ac8f29464792bf2b7f3df2f9df, RESELLER, 83e75a7ae333ca9d
 inmobi.com, ef083d721beb4c0f8776ced01e262c03, RESELLER, 83e75a7ae333ca9d
-inmobi.com, f86daa14310a47e6a9fe01fd226405c6, DIRECT, 83e75a7ae333ca9d
+inmobi.com, f86daa14310a47e6a9fe01fd226405c6, RESELLER, 83e75a7ae333ca9d
 ironsrc.com, 222871, RESELLER, 79929e88b2ba73bc
 kidoz.net, 14260, RESELLER, a109366414b7335e
 krushmedia.com, ajxf6R585a9m6Catvk, RESELLER
@@ -405,7 +405,7 @@ thebrave.io, 9840732, RESELLER, c25b2154543746ac
 themediagrid.com, A6CWLO, RESELLER, 35d5010d7789b49d
 themediagrid.com, A8X5S7, RESELLER, 35d5010d7789b49d
 themediagrid.com, B8N9YH, RESELLER, 35d5010d7789b49d
-themediagrid.com, FALINO, DIRECT, 35d5010d7789b49d
+themediagrid.com, FALINO, RESELLER, 35d5010d7789b49d
 themediagrid.com, RABCQ1, RESELLER, 35d5010d7789b49d
 thunder-monetize.com, 1421531493, RESELLER
 thunder-monetize.com, 3905806597, RESELLER
@@ -426,7 +426,7 @@ triplelift.com, 13883, RESELLER, 6c33edb13117fd86
 trustedstack.com, TSCLS3659, RESELLER
 ucfunnel.com, par-BE7E667E3339AD6BC7BA2887D6E7227A, RESELLER
 undertone.com, 4108, RESELLER
-unity.com, 5650685, DIRECT, 96cabb5fbdde37a7
+unity.com, 5650685, RESELLER, 96cabb5fbdde37a7
 ushareit.com, LC7dc692567a127a57, RESELLER
 ushareit.com, lcb555b3bc8667a09a, RESELLER
 ushareit.com, LCb555b3bc8667a09a, RESELLER
