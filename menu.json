@@ -1,0 +1,152 @@
+[
+  {
+    "titleKey": "menuAntibiotics",
+    "icon": "right-arrow.png",
+    "androidUrl": "https://play.google.com/store/apps/details?id=com.antibiotics_by_oliva",
+    "iosUrl": "https://apps.apple.com/us/app/antibiotics-by-oliva/id6680196152"
+  },
+  {
+    "titleKey": "menuAstrology",
+    "icon": "right-arrow.png",
+    "androidUrl": "https://play.google.com/store/apps/details?id=com.astrology_by_oliva",
+    "iosUrl": "https://apps.apple.com/us/app/astrology-by-oliva/id6746717155"
+  },
+  {
+    "titleKey": "menuCats",
+    "icon": "right-arrow.png",
+    "androidUrl": "https://play.google.com/store/apps/details?id=com.cats_by_oliva",
+    "iosUrl": "https://apps.apple.com/us/app/cats-by-oliva/id6742685133"
+  },
+  {
+    "titleKey": "menuCrypto",
+    "icon": "right-arrow.png",
+    "androidUrl": "https://play.google.com/store/apps/details?id=com.crypto_by_oliva",
+    "iosUrl": "https://apps.apple.com/us/app/crypto-by-oliva/id6742685229"
+  },
+  {
+    "titleKey": "menuDinosaurs",
+    "icon": "right-arrow.png",
+    "androidUrl": "https://play.google.com/store/apps/details?id=com.dinosaurs_by_oliva",
+    "iosUrl": "https://apps.apple.com/us/app/dinosaurs-by-oliva/id6746718846"
+  },
+  {
+    "titleKey": "menuDiseases",
+    "icon": "right-arrow.png",
+    "androidUrl": "https://play.google.com/store/apps/details?id=com.diseases_by_oliva",
+    "iosUrl": "https://apps.apple.com/us/app/diseases-by-oliva/id6670185689"
+  },
+  {
+    "titleKey": "menuDogs",
+    "icon": "right-arrow.png",
+    "androidUrl": "https://play.google.com/store/apps/details?id=com.dogs_by_oliva",
+    "iosUrl": "https://apps.apple.com/us/app/dogs-by-oliva/id6742685451"
+  },
+  {
+    "titleKey": "menuENumbers",
+    "icon": "right-arrow.png",
+    "androidUrl": "https://play.google.com/store/apps/details?id=com.e_number_by_oliva",
+    "iosUrl": "https://apps.apple.com/us/app/e-number-by-oliva/id6478639811"
+  },
+  {
+    "titleKey": "menuFastingMethods",
+    "icon": "right-arrow.png",
+    "androidUrl": "https://play.google.com/store/apps/details?id=com.fasting_by_oliva",
+    "iosUrl": "https://apps.apple.com/us/app/fasting-by-oliva/id6742858811"
+  },
+  {
+    "titleKey": "menuFinances",
+    "icon": "right-arrow.png",
+    "androidUrl": "https://play.google.com/store/apps/details?id=com.finances_by_oliva",
+    "iosUrl": "https://apps.apple.com/us/app/finances-by-oliva/id6742321942"
+  },
+  {
+    "titleKey": "menuGemstones",
+    "icon": "right-arrow.png",
+    "androidUrl": "https://play.google.com/store/apps/details?id=com.stones_by_oliva",
+    "iosUrl": "https://apps.apple.com/us/app/stones-by-oliva/id6742685417"
+  },
+  {
+    "titleKey": "menuHormones",
+    "icon": "right-arrow.png",
+    "androidUrl": "https://play.google.com/store/apps/details?id=com.hormones_by_oliva",
+    "iosUrl": "https://apps.apple.com/us/app/hormones-by-oliva/id6739848653"
+  },
+  {
+    "titleKey": "menuLunarCalendar",
+    "icon": "right-arrow.png",
+    "androidUrl": "https://play.google.com/store/apps/details?id=com.lunar_calendar_by_oliva",
+    "iosUrl": "https://apps.apple.com/us/app/lunar-calendar-by-oliva/id6670185937"
+  },
+  {
+    "titleKey": "menuMushrooms",
+    "icon": "right-arrow.png",
+    "androidUrl": "https://play.google.com/store/apps/details?id=com.mushrooms_by_oliva",
+    "iosUrl": "https://apps.apple.com/us/app/mushrooms-by-oliva/id6742183154"
+  },
+  {
+    "titleKey": "menuNightDreams",
+    "icon": "right-arrow.png",
+    "androidUrl": "https://play.google.com/store/apps/details?id=com.dreams_by_oliva",
+    "iosUrl": "https://apps.apple.com/us/app/dreams-by-oliva/id6742685338"
+  },
+  {
+    "titleKey": "menuNumerology",
+    "icon": "right-arrow.png",
+    "androidUrl": "https://play.google.com/store/apps/details?id=com.numerology_by_oliva",
+    "iosUrl": "https://apps.apple.com/us/app/numerology-by-oliva/id6742685515"
+  },
+  {
+    "titleKey": "menuNutrients",
+    "icon": "right-arrow.png",
+    "androidUrl": "https://play.google.com/store/apps/details?id=com.nutrients_by_oliva",
+    "iosUrl": "https://apps.apple.com/us/app/nutrients-by-oliva/id6670186011"
+  },
+  {
+    "titleKey": "menuOnePotMeal",
+    "icon": "right-arrow.png",
+    "androidUrl": "https://play.google.com/store/apps/details?id=com.onepotmeal_by_oliva",
+    "iosUrl": "https://apps.apple.com/us/app/onepotmeal-by-oliva/id6741917912"
+  },
+  {
+    "titleKey": "menuPhobias",
+    "icon": "right-arrow.png",
+    "androidUrl": "https://play.google.com/store/apps/details?id=com.phobias_by_oliva",
+    "iosUrl": "https://apps.apple.com/us/app/phobias-by-oliva/id6742685294"
+  },
+  {
+    "titleKey": "menuPigments",
+    "icon": "right-arrow.png",
+    "androidUrl": "https://play.google.com/store/apps/details?id=com.pigments_by_oliva",
+    "iosUrl": "https://apps.apple.com/us/app/pigments-tattoo/id6747997645"
+  },
+  {
+    "titleKey": "menuProbiotics",
+    "icon": "right-arrow.png",
+    "androidUrl": "https://play.google.com/store/apps/details?id=com.probiotics_by_oliva",
+    "iosUrl": "https://apps.apple.com/us/app/probiotics-by-oliva/id6720753184"
+  },
+  {
+    "titleKey": "menuRunes",
+    "icon": "right-arrow.png",
+    "androidUrl": "https://play.google.com/store/apps/details?id=com.runes_by_oliva",
+    "iosUrl": "https://apps.apple.com/us/app/runes-by-oliva/id6746326376"
+  },
+  {
+    "titleKey": "menuSteroids",
+    "icon": "right-arrow.png",
+    "androidUrl": "https://play.google.com/store/apps/details?id=com.steroids_by_oliva",
+    "iosUrl": "https://apps.apple.com/us/app/steroids-by-oliva/id6720753282"
+  },
+  {
+    "titleKey": "menuSuperstitions",
+    "icon": "right-arrow.png",
+    "androidUrl": "https://play.google.com/store/apps/details?id=com.superstitions_by_oliva",
+    "iosUrl": "https://apps.apple.com/us/app/superstitions-by-oliva/id6742685688"
+  },
+  {
+    "titleKey": "menuTarot",
+    "icon": "right-arrow.png",
+    "androidUrl": "https://play.google.com/store/apps/details?id=com.tarot_by_oliva",
+    "iosUrl": "https://apps.apple.com/us/app/tarot-by-oliva/id6742685616"
+  }
+]
