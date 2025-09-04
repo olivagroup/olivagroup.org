@@ -181,11 +181,9 @@ form.addEventListener('submit', async (e) => {
     console.error(error);
   }
 });
-</script>
 
-    // Scroll focused input into view on mobile when keyboard appears
+  // Scroll focused input into view on mobile when keyboard appears
 const inputs = document.querySelectorAll('input, textarea');
-
 inputs.forEach(input => {
   input.addEventListener('focus', () => {
     setTimeout(() => {
@@ -193,7 +191,8 @@ inputs.forEach(input => {
     }, 300); // delay to wait for keyboard
   });
 });
-
+  
+</script>
 
   </main>
   
