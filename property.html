@@ -133,7 +133,9 @@ main {
 
 
 
-<form id="contactForm">
+<form id="contactForm"
+      method="POST"
+      action="https://script.google.com/macros/s/DEPLOYMENT_ID/exec">
   <label for="name">Full name</label>
   <input id="name" name="name" type="text" required />
 
@@ -144,12 +146,11 @@ main {
   <textarea id="message" name="message" rows="4" required></textarea>
 
   <button type="submit" id="submitBtn">Send</button>
-
   <p id="formStatus" style="margin-top:0.5rem;font-weight:bold;"></p>
 </form>
 
+
 <script>
-  // 🔁 Replace this with your Web App deployment URL
   const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyI7iz61GESDqqMAw6vlSMGlx8NGvNCiMo5etqaK4Hrm82fguiFlUC_zo6n-ENkSQA3Xw/exec";
 
   const formEl = document.getElementById("contactForm");
@@ -157,31 +158,24 @@ main {
   const btnEl = document.getElementById("submitBtn");
 
   formEl.addEventListener("submit", async (e) => {
-    e.preventDefault();
+    e.preventDefault(); // use JS-submit, not default navigation
     statusEl.textContent = "";
     btnEl.disabled = true;
 
-    const payload = {
-      name: formEl.name.value.trim(),
-      phone: formEl.phone.value.trim(),
-      message: formEl.message.value.trim(),
-      source: "olivagroup.org"
-    };
-
     try {
+      // Use FormData (simple request = no preflight)
+      const fd = new FormData(formEl);
+
       const res = await fetch(WEB_APP_URL, {
         method: "POST",
-        body: payload,
+        body: fd,           // IMPORTANT: no headers set
       });
 
-      // Some GAS deployments respond without CORS readable body; handle both cases:
-      if (!res.ok) {
-        throw new Error(`Request failed: ${res.status}`);
-      }
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
 
       let data;
       try { data = await res.json(); }
-      catch { data = { result: "success" }; }
+      catch { data = { result: "success" }; } // some GAS deployments block JSON read; 200 still means ok
 
       if (data.result === "success") {
         statusEl.style.color = "#2c7a7b";
@@ -191,14 +185,16 @@ main {
         throw new Error(data.message || "Unknown error");
       }
     } catch (err) {
-      statusEl.style.color = "#c53030";
-      statusEl.textContent = "Sorry—something went wrong. Please email us at olivagroup.emailbox@gmail.com.";
       console.error(err);
+      statusEl.style.color = "#c53030";
+      statusEl.textContent =
+        "Sorry—something went wrong. Please email us at olivagroup.emailbox@gmail.com.";
     } finally {
       btnEl.disabled = false;
     }
   });
 </script>
+
 
 
     
