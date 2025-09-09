@@ -171,8 +171,7 @@ main {
     try {
       const res = await fetch(WEB_APP_URL, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
+        body: payload,
       });
 
       // Some GAS deployments respond without CORS readable body; handle both cases:
@@ -180,13 +179,9 @@ main {
         throw new Error(`Request failed: ${res.status}`);
       }
 
-      let data = {};
-      try {
-        data = await res.json();
-      } catch (_) {
-        // If response isn't JSON-readable under CORS, assume success when 200
-        data.result = "success";
-      }
+      let data;
+      try { data = await res.json(); }
+      catch { data = { result: "success" }; }
 
       if (data.result === "success") {
         statusEl.style.color = "#2c7a7b";
