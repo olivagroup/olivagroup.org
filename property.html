@@ -5,6 +5,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>OLIVA Group – Property</title>
   <style>
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0 3rem;
+}
+
+.project-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+}
+
+.project-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.project-info {
+  padding: 1rem 1.2rem;
+}
+
+.project-info h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.2rem;
+  color: #2c3e50;
+}
+
+.project-info p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #666;
+}
+
+    
     body {
   display: flex;
   flex-direction: column;
@@ -118,6 +163,35 @@ main {
     
     <h2>The OLIVA Advantage</h2>
     <p>As active developers, we bring a unique perspective that directly benefits your bottom line. We have a keen eye for market-leading design and access to bulk deals on materials and services. This dual advantage ensures a more profitable outcome for your investment and a final product that stands out in the market. Your financial security is our priority, which is why we offer no-variations, fixed-price contracts for absolute peace of mind.</p>
+    
+    <h2>Selected Projects</h2>
+
+<div class="project-grid">
+  <div class="project-card">
+    <img src="projects/project1.jpg" alt="Luxury Duplex – Sydney" />
+    <div class="project-info">
+      <h3>Luxury Duplex – Sydney</h3>
+      <p>High-end dual occupancy development designed for long-term capital growth.</p>
+    </div>
+  </div>
+
+  <div class="project-card">
+    <img src="projects/project2.jpg" alt="Boutique Townhomes – Inner West" />
+    <div class="project-info">
+      <h3>Boutique Townhomes – Inner West</h3>
+      <p>Architecturally designed residences with premium finishes.</p>
+    </div>
+  </div>
+
+  <div class="project-card">
+    <img src="projects/project3.jpg" alt="Modern Family Residence" />
+    <div class="project-info">
+      <h3>Modern Family Residence</h3>
+      <p>Contemporary design optimised for resale and rental yield.</p>
+    </div>
+  </div>
+</div>
+
     
     <h2>Your All-Inclusive Investment Journey</h2>
     <p>We manage every detail of your project, serving as your single point of contact for a seamless and discreet experience. While your final approvals and key decisions are essential, we handle all the legwork, presenting you with the optimal options to make the process as simple as possible. You are welcome to engage our services at any stage below to suit your specific needs.</p>
