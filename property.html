@@ -5,92 +5,167 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>OLIVA Group – Property</title>
   <style>
+    :root{
+      --ink:#2c3e50;
+      --ink2:#34495e;
+      --muted:#6b7280;
+      --bg:#f9f9f9;
+      --card:#ffffff;
+      --shadow: 0 12px 35px rgba(0,0,0,0.10);
+      --shadow2: 0 18px 50px rgba(0,0,0,0.14);
+      --brand:#2980b9;
+      --brand2:#1abc9c;
+    }
 
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.5rem;
-  margin: 2rem 0 3rem;
-}
-
-.project-card {
-  background: white;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 18px 40px rgba(0,0,0,0.12);
-}
-
-.project-card img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  display: block;
-}
-
-.project-info {
-  padding: 1rem 1.2rem;
-}
-
-.project-info h3 {
-  margin: 0 0 0.5rem;
-  font-size: 1.2rem;
-  color: #2c3e50;
-}
-
-.project-info p {
-  margin: 0;
-  font-size: 0.95rem;
-  color: #666;
-}
-
-    
     body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  margin: 0;
-  font-family: Arial, sans-serif;
-  text-align: center;
-  background: #f9f9f9;
-  color: #333;
-  overflow-y: auto; /* allow scrolling */
-}
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: var(--bg);
+      color: #333;
+      overflow-y: auto;
+    }
 
-main {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 2rem;
-  max-width: 900px;
-  margin: 0 auto;
-  /* optional for smoother scroll when keyboard appears */
-  scroll-behavior: smooth;
-}
+    main {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+      scroll-behavior: smooth;
+    }
 
     img.logo {
       width: 120px;
       height: auto;
       margin-bottom: 1rem;
     }
+
+    /* --- HERO (full-bleed slider + overlay + animation) --- */
+    .hero{
+      position: relative;
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      height: min(76vh, 680px);
+      overflow: hidden;
+      border-radius: 0;
+      margin-bottom: 2rem;
+    }
+
+    .hero-media{
+      position:absolute;
+      inset:0;
+      background:#111;
+    }
+
+    .hero-slide{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      opacity:0;
+      transform: scale(1.06);
+      transition: opacity 1200ms ease, transform 2600ms ease;
+      will-change: opacity, transform;
+    }
+
+    .hero-slide.is-active{
+      opacity:1;
+      transform: scale(1.0);
+    }
+
+    .hero-overlay{
+      position:absolute;
+      inset:0;
+      background: linear-gradient(
+        90deg,
+        rgba(0,0,0,0.62) 0%,
+        rgba(0,0,0,0.38) 45%,
+        rgba(0,0,0,0.10) 100%
+      );
+    }
+
+    .hero-content{
+      position:relative;
+      z-index:2;
+      width: min(900px, 92vw);
+      text-align: left;
+      color: #fff;
+      padding: 2.25rem 2rem;
+    }
+
+    .hero-kicker{
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-size: .85rem;
+      margin: 0 0 .75rem;
+      opacity: .92;
+    }
+
+    .hero-title{
+      font-size: clamp(2rem, 3.6vw, 3.5rem);
+      margin: 0 0 1rem;
+      line-height: 1.1;
+      color: #fff;
+    }
+
+    .hero-subtitle{
+      max-width: 56ch;
+      margin: 0 0 1.5rem;
+      color: rgba(255,255,255,0.92);
+      font-size: 1.05rem;
+      line-height: 1.55;
+    }
+
+    .hero-cta{ display:flex; gap:.75rem; flex-wrap:wrap; }
+
+    .btn-primary, .btn-ghost{
+      display:inline-block;
+      padding: .8rem 1.1rem;
+      border-radius: 999px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform .2s ease, opacity .2s ease, background .2s ease;
+    }
+
+    .btn-primary{
+      background: #ffffff;
+      color: #111827;
+    }
+
+    .btn-ghost{
+      border: 1px solid rgba(255,255,255,0.55);
+      color: white;
+      background: rgba(255,255,255,0.08);
+    }
+
+    .btn-primary:hover{ opacity:.94; transform: translateY(-1px); }
+    .btn-ghost:hover{ background: rgba(255,255,255,0.14); transform: translateY(-1px); }
+
+    /* --- Typography --- */
     h1 {
       font-size: 2.5rem;
       margin-bottom: 1rem;
-      color: #2c3e50;
+      color: var(--ink);
     }
+
     h2 {
       font-size: 2rem;
       margin-top: 2rem;
       margin-bottom: 1rem;
-      color: #34495e;
+      color: var(--ink2);
+      width: 100%;
+      max-width: 800px;
+      text-align: left;
     }
+
     p, li {
       font-size: 1.1rem;
       line-height: 1.6;
@@ -98,41 +173,146 @@ main {
       text-align: left;
       max-width: 800px;
     }
+
     ul {
       padding-left: 1.5rem;
       text-align: left;
       max-width: 800px;
     }
+
     li {
       margin-bottom: 1rem;
     }
-    footer {
-      background: #2c3e50;
-      color: white;
-      padding: 1rem 0;
-      font-size: 0.9rem;
-      margin-top: auto;
+
+    /* --- Projects grid (premium cards + hover zoom) --- */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+      margin: 1.25rem 0 2.25rem;
+      width: 100%;
+      max-width: 900px;
     }
-    a {
-      text-decoration: none;
-      color: #2980b9;
-      font-weight: bold;
-      transition: color 0.3s ease;
+
+    .project-card {
+      background: var(--card);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
     }
-    a:hover {
-      color: #1abc9c;
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow2);
     }
+
+    .project-img{
+      position: relative;
+      overflow:hidden;
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      display: block;
+      transform: scale(1.02);
+      transition: transform 0.65s ease;
+      cursor: zoom-in;
+    }
+
+    .project-card:hover img {
+      transform: scale(1.07);
+    }
+
+    .project-info {
+      padding: 1rem 1.2rem 1.2rem;
+      text-align: left;
+    }
+
+    .project-info h3 {
+      margin: 0 0 0.5rem;
+      font-size: 1.2rem;
+      color: var(--ink);
+    }
+
+    .project-info p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.45;
+      max-width: none;
+    }
+
+    /* --- Scroll reveal --- */
+    .reveal{
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity 700ms ease, transform 700ms ease;
+    }
+
+    .reveal.is-visible{
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* --- Lightbox --- */
+    .lightbox{
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.88);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      padding: 4vh 4vw;
+    }
+
+    .lightbox.is-open{ display:flex; }
+
+    .lightbox img{
+      max-width: 100%;
+      max-height: 100%;
+      border-radius: 12px;
+      box-shadow: 0 20px 80px rgba(0,0,0,0.35);
+      cursor: zoom-out;
+    }
+
+    .lightbox-close{
+      position: absolute;
+      top: 16px;
+      right: 18px;
+      width: 44px;
+      height: 44px;
+      border: none;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.12);
+      color: #fff;
+      font-size: 22px;
+      cursor: pointer;
+      transition: background .2s ease, transform .2s ease;
+    }
+
+    .lightbox-close:hover{
+      background: rgba(255,255,255,0.18);
+      transform: translateY(-1px);
+    }
+
+    /* --- Contact form --- */
     form {
       margin-top: 2rem;
       max-width: 500px;
       width: 100%;
       text-align: left;
     }
+
     label {
       display: block;
       margin-bottom: 0.5rem;
       font-weight: bold;
     }
+
     input, textarea, button {
       width: 100%;
       padding: 0.5rem;
@@ -141,146 +321,301 @@ main {
       border-radius: 4px;
       font-size: 1rem;
     }
+
     button {
-      background-color: #2980b9;
+      background-color: var(--brand);
       color: white;
       border: none;
       cursor: pointer;
       font-weight: bold;
-      transition: background-color 0.3s ease;
+      transition: background-color 0.3s ease, transform .2s ease;
     }
+
     button:hover {
-      background-color: #1abc9c;
+      background-color: var(--brand2);
+      transform: translateY(-1px);
+    }
+
+    footer {
+      background: var(--ink);
+      color: white;
+      padding: 1rem 0;
+      font-size: 0.9rem;
+      margin-top: auto;
+    }
+
+    a {
+      text-decoration: none;
+      color: var(--brand);
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: var(--brand2);
+    }
+
+    @media (max-width: 860px){
+      .hero{ height: min(72vh, 620px); }
+      .hero-content{ padding: 2rem 1.25rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      .reveal, .hero-slide, .project-card, .project-card img, button, .btn-primary, .btn-ghost{
+        transition: none !important;
+        transform: none !important;
+      }
     }
   </style>
 </head>
+
 <body>
+
+  <!-- Full-bleed animated hero -->
+  <section class="hero" aria-label="OLIVA hero">
+    <div class="hero-media">
+      <!-- same-level files (NOT /projects/) -->
+      <img class="hero-slide is-active" src="project1.png" alt="OLIVA Project 1" />
+      <img class="hero-slide" src="project2.png" alt="OLIVA Project 2" />
+      <img class="hero-slide" src="project3.png" alt="OLIVA Project 3" />
+    </div>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content reveal">
+      <p class="hero-kicker">OLIVA Group – Property</p>
+      <h1 class="hero-title">Strategic property investment & development in Greater Sydney.</h1>
+      <p class="hero-subtitle">
+        You retain full ownership throughout the entire process — we manage the complexity end-to-end with
+        design-led value and fixed-price certainty.
+      </p>
+      <div class="hero-cta">
+        <a class="btn-primary" href="#contact">Discuss a project</a>
+        <a class="btn-ghost" href="#projects">View projects</a>
+      </div>
+    </div>
+  </section>
+
   <main>
     <img src="oliva.png" alt="OLIVA Logo" class="logo" />
-    <h1>OLIVA Group – Property</h1>
-    
-    <p>Welcome to the OLIVA Group – Property, your exclusive partner in strategic property investment and development. We offer a streamlined, end-to-end investment solution in the greater Sydney region, designed for discerning individuals who want to build wealth through property with as hands-off involvement as possible. You always maintain full asset ownership throughout the entire process, while we handle the complexities.</p>
-    
-    <h2>The OLIVA Advantage</h2>
-    <p>As active developers, we bring a unique perspective that directly benefits your bottom line. We have a keen eye for market-leading design and access to bulk deals on materials and services. This dual advantage ensures a more profitable outcome for your investment and a final product that stands out in the market. Your financial security is our priority, which is why we offer no-variations, fixed-price contracts for absolute peace of mind.</p>
-    
-    <h2>Selected Projects</h2>
 
-<div class="project-grid">
-  <div class="project-card">
-    <img src="project1.jpg" alt="Luxury Duplex – Sydney" />
-    <div class="project-info">
-      <h3>Luxury Duplex – Sydney</h3>
-      <p>High-end dual occupancy development designed for long-term capital growth.</p>
+    <p class="reveal">
+      Welcome to the OLIVA Group – Property, your exclusive partner in strategic property investment and development.
+      We offer a streamlined, end-to-end investment solution in the greater Sydney region, designed for discerning
+      individuals who want to build wealth through property with as hands-off involvement as possible.
+      You always maintain full asset ownership throughout the entire process, while we handle the complexities.
+    </p>
+
+    <h2 class="reveal">The OLIVA Advantage</h2>
+    <p class="reveal">
+      As active developers, we bring a unique perspective that directly benefits your bottom line. We have a keen eye
+      for market-leading design and access to bulk deals on materials and services. This dual advantage ensures a more
+      profitable outcome for your investment and a final product that stands out in the market. Your financial security
+      is our priority, which is why we offer no-variations, fixed-price contracts for absolute peace of mind.
+    </p>
+
+    <h2 id="projects" class="reveal">Selected Projects</h2>
+
+    <div class="project-grid">
+      <div class="project-card reveal">
+        <div class="project-img">
+          <img src="project1.png" alt="Luxury Duplex – Sydney" data-lightbox />
+        </div>
+        <div class="project-info">
+          <h3>Luxury Duplex – Sydney</h3>
+          <p>High-end dual occupancy development designed for long-term capital growth.</p>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-img">
+          <img src="project2.png" alt="Boutique Townhomes – Inner West" data-lightbox />
+        </div>
+        <div class="project-info">
+          <h3>Boutique Townhomes – Inner West</h3>
+          <p>Architecturally designed residences with premium finishes.</p>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-img">
+          <img src="project3.png" alt="Modern Family Residence" data-lightbox />
+        </div>
+        <div class="project-info">
+          <h3>Modern Family Residence</h3>
+          <p>Contemporary design optimised for resale and rental yield.</p>
+        </div>
+      </div>
     </div>
-  </div>
 
-  <div class="project-card">
-    <img src="project2.jpg" alt="Boutique Townhomes – Inner West" />
-    <div class="project-info">
-      <h3>Boutique Townhomes – Inner West</h3>
-      <p>Architecturally designed residences with premium finishes.</p>
-    </div>
-  </div>
+    <h2 class="reveal">Your All-Inclusive Investment Journey</h2>
+    <p class="reveal">
+      We manage every detail of your project, serving as your single point of contact for a seamless and discreet
+      experience. While your final approvals and key decisions are essential, we handle all the legwork, presenting you
+      with the optimal options to make the process as simple as possible. You are welcome to engage our services at any
+      stage below to suit your specific needs.
+    </p>
 
-  <div class="project-card">
-    <img src="project3.jpg" alt="Modern Family Residence" />
-    <div class="project-info">
-      <h3>Modern Family Residence</h3>
-      <p>Contemporary design optimised for resale and rental yield.</p>
-    </div>
-  </div>
-</div>
-
-    
-    <h2>Your All-Inclusive Investment Journey</h2>
-    <p>We manage every detail of your project, serving as your single point of contact for a seamless and discreet experience. While your final approvals and key decisions are essential, we handle all the legwork, presenting you with the optimal options to make the process as simple as possible. You are welcome to engage our services at any stage below to suit your specific needs.</p>
-    
-    <ul>
-      <li><strong>1. Strategic Opportunity & Acquisition</strong><br>We identify prime development sites in Sydney and provide a comprehensive analysis. We bring in our network of experts, including architects, structural engineers, and town planners, to validate the land's potential. We also connect you with trusted mortgage brokers for financing and buyer's agents for a smooth purchase.</li>
-      <li><strong>2. Design & Value Engineering</strong><br>We don't just design a house; we craft a market-leading asset. Our team, in collaboration with expert interior and exterior designers, ensures the property is beautiful, functional, and perfectly aligned with current buyer preferences. We handle all approvals and certificates on your behalf, providing you with a single point of contact for all documentation. We can also explore opportunities for passive income by renting out the existing property during the approval phase.</li>
-      <li><strong>3. Execution & Management</strong><br>Our licensed builders are committed to the highest standards. Our approach focuses on long-term value, using high-quality materials to ensure structural reliability and integrity. We oversee every aspect of construction, protecting your valuable asset with applicable insurances and guarantees.</li>
-      <li><strong>4. Sales & Maximised Returns</strong><br>Upon completion, we manage the final stages to maximise your return. We can manage subdivision, handle long-term rentals, or facilitate a high-yield sale. We work with top-tier stylists and selling agents who understand the Sydney luxury market to ensure your property achieves its full value.</li>
+    <ul class="reveal">
+      <li><strong>1. Strategic Opportunity &amp; Acquisition</strong><br>
+        We identify prime development sites in Sydney and provide a comprehensive analysis. We bring in our network of
+        experts, including architects, structural engineers, and town planners, to validate the land's potential.
+        We also connect you with trusted mortgage brokers for financing and buyer's agents for a smooth purchase.
+      </li>
+      <li><strong>2. Design &amp; Value Engineering</strong><br>
+        We don't just design a house; we craft a market-leading asset. Our team, in collaboration with expert interior
+        and exterior designers, ensures the property is beautiful, functional, and perfectly aligned with current buyer
+        preferences. We handle all approvals and certificates on your behalf, providing you with a single point of
+        contact for all documentation. We can also explore opportunities for passive income by renting out the existing
+        property during the approval phase.
+      </li>
+      <li><strong>3. Execution &amp; Management</strong><br>
+        Our licensed builders are committed to the highest standards. Our approach focuses on long-term value, using
+        high-quality materials to ensure structural reliability and integrity. We oversee every aspect of construction,
+        protecting your valuable asset with applicable insurances and guarantees.
+      </li>
+      <li><strong>4. Sales &amp; Maximised Returns</strong><br>
+        Upon completion, we manage the final stages to maximise your return. We can manage subdivision, handle long-term
+        rentals, or facilitate a high-yield sale. We work with top-tier stylists and selling agents who understand the
+        Sydney luxury market to ensure your property achieves its full value.
+      </li>
     </ul>
 
-    <p>Your success is our mission. We're ready to discuss your next strategic investment – simply fill in our contact form below, and we’ll get in touch!</p>
+    <p class="reveal">
+      Your success is our mission. We're ready to discuss your next strategic investment – simply fill in our contact
+      form below, and we’ll get in touch!
+    </p>
 
+    <form id="contactForm" method="POST" action="https://script.google.com/macros/s/DEPLOYMENT_ID/exec">
+      <h2 id="contact" class="reveal" style="margin-top:2rem;">Contact</h2>
 
+      <label for="name">Full name</label>
+      <input id="name" name="name" type="text" required />
 
+      <label for="phone">Phone</label>
+      <input id="phone" name="phone" type="tel" required />
 
-<form id="contactForm"
-      method="POST"
-      action="https://script.google.com/macros/s/DEPLOYMENT_ID/exec">
-  <label for="name">Full name</label>
-  <input id="name" name="name" type="text" required />
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
 
-  <label for="phone">Phone</label>
-  <input id="phone" name="phone" type="tel" required />
-
-  <label for="message">Message</label>
-  <textarea id="message" name="message" rows="4" required></textarea>
-
-  <button type="submit" id="submitBtn">Send</button>
-  <p id="formStatus" style="margin-top:0.5rem;font-weight:bold;"></p>
-</form>
-
-
-<script>
-  const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyI7iz61GESDqqMAw6vlSMGlx8NGvNCiMo5etqaK4Hrm82fguiFlUC_zo6n-ENkSQA3Xw/exec";
-
-  const formEl = document.getElementById("contactForm");
-  const statusEl = document.getElementById("formStatus");
-  const btnEl = document.getElementById("submitBtn");
-
-  formEl.addEventListener("submit", async (e) => {
-    e.preventDefault(); // use JS-submit, not default navigation
-    statusEl.textContent = "";
-    btnEl.disabled = true;
-
-    try {
-      // Use FormData (simple request = no preflight)
-      const fd = new FormData(formEl);
-
-      const res = await fetch(WEB_APP_URL, {
-        method: "POST",
-        body: fd,           // IMPORTANT: no headers set
-      });
-
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-
-      let data;
-      try { data = await res.json(); }
-      catch { data = { result: "success" }; } // some GAS deployments block JSON read; 200 still means ok
-
-      if (data.result === "success") {
-        statusEl.style.color = "#2c7a7b";
-        statusEl.textContent = "Thanks! We’ve received your details.";
-        formEl.reset();
-      } else {
-        throw new Error(data.message || "Unknown error");
-      }
-    } catch (err) {
-      console.error(err);
-      statusEl.style.color = "#c53030";
-      statusEl.textContent =
-        "Sorry—something went wrong. Please email us at olivagroup.emailbox@gmail.com.";
-    } finally {
-      btnEl.disabled = false;
-    }
-  });
-</script>
-
-
-
-    
-   
-
-
-
+      <button type="submit" id="submitBtn">Send</button>
+      <p id="formStatus" style="margin-top:0.5rem;font-weight:bold;"></p>
+    </form>
   </main>
-  
+
   <footer>
     &copy; 2026 OLIVA Group
   </footer>
+
+  <!-- Lightbox modal -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" type="button" aria-label="Close image" id="lightboxClose">&times;</button>
+    <img id="lightboxImg" alt="" />
+  </div>
+
+  <script>
+    // --- Contact form submission (your existing logic) ---
+    const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyI7iz61GESDqqMAw6vlSMGlx8NGvNCiMo5etqaK4Hrm82fguiFlUC_zo6n-ENkSQA3Xw/exec";
+
+    const formEl = document.getElementById("contactForm");
+    const statusEl = document.getElementById("formStatus");
+    const btnEl = document.getElementById("submitBtn");
+
+    formEl.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      statusEl.textContent = "";
+      btnEl.disabled = true;
+
+      try {
+        const fd = new FormData(formEl);
+        const res = await fetch(WEB_APP_URL, { method: "POST", body: fd });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+        let data;
+        try { data = await res.json(); }
+        catch { data = { result: "success" }; }
+
+        if (data.result === "success") {
+          statusEl.style.color = "#2c7a7b";
+          statusEl.textContent = "Thanks! We’ve received your details.";
+          formEl.reset();
+        } else {
+          throw new Error(data.message || "Unknown error");
+        }
+      } catch (err) {
+        console.error(err);
+        statusEl.style.color = "#c53030";
+        statusEl.textContent = "Sorry—something went wrong. Please email us at olivagroup.emailbox@gmail.com.";
+      } finally {
+        btnEl.disabled = false;
+      }
+    });
+
+    // --- Hero slideshow ---
+    (function(){
+      const slides = Array.from(document.querySelectorAll(".hero-slide"));
+      if (!slides.length) return;
+
+      let idx = 0;
+      setInterval(() => {
+        slides[idx].classList.remove("is-active");
+        idx = (idx + 1) % slides.length;
+        slides[idx].classList.add("is-active");
+      }, 4500);
+    })();
+
+    // --- Scroll reveal ---
+    (function(){
+      const els = document.querySelectorAll(".reveal");
+      if (!els.length) return;
+
+      const io = new IntersectionObserver((entries) => {
+        for (const e of entries){
+          if (e.isIntersecting){
+            e.target.classList.add("is-visible");
+            io.unobserve(e.target);
+          }
+        }
+      }, { threshold: 0.12 });
+
+      els.forEach(el => io.observe(el));
+    })();
+
+    // --- Lightbox (click project images to view fullscreen) ---
+    (function(){
+      const lb = document.getElementById("lightbox");
+      const lbImg = document.getElementById("lightboxImg");
+      const lbClose = document.getElementById("lightboxClose");
+
+      function open(src, alt){
+        lbImg.src = src;
+        lbImg.alt = alt || "";
+        lb.classList.add("is-open");
+        lb.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+      }
+
+      function close(){
+        lb.classList.remove("is-open");
+        lb.setAttribute("aria-hidden", "true");
+        lbImg.src = "";
+        document.body.style.overflow = "";
+      }
+
+      document.querySelectorAll('img[data-lightbox]').forEach(img => {
+        img.addEventListener("click", () => open(img.src, img.alt));
+      });
+
+      lb.addEventListener("click", (e) => {
+        if (e.target === lb || e.target === lbImg) close();
+      });
+
+      lbClose.addEventListener("click", close);
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") close();
+      });
+    })();
+  </script>
+
 </body>
 </html>
