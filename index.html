@@ -52,15 +52,12 @@ gap:12px;
 font-weight:700;
 }
 
-.brand-mark{
+.brand-logo{
 width:40px;
 height:40px;
 border-radius:12px;
-background:#111;
-color:white;
-display:grid;
-place-items:center;
-font-weight:700;
+object-fit:contain;
+display:block;
 }
 
 .hero{
@@ -182,15 +179,15 @@ height:18px;
 <header class="topbar">
 <div class="container topbar-inner">
 <div class="brand">
-<div class="brand-mark">OL</div>
-<div>OLIVA Group</div>
+  <img class="brand-logo" src="/logos/oliva.png" alt="OLIVA Group">
+  <div>OLIVA Group</div>
 </div>
 </div>
 </header>
 
 <section class="hero container">
-<h1>All OLIVA Apps</h1>
-<p>Minimal catalog of OLIVA mobile apps with direct download links.</p>
+  <h1>Explore the OLIVA app portfolio</h1>
+  <p>Discover OLIVA Group’s collection of mobile apps across wellness, lifestyle, learning, and reference — with direct links for iPhone and Android.</p>
 </section>
 
 <section class="container">
