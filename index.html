@@ -3,89 +3,675 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="google-site-verification" content="kCOEYH53PXzCaCS_-cY0s2u1rMqOGuqxZG_aFK1vRpE" />
-  <title>OLIVA Group</title>
+  <title>OLIVA Group — Apps</title>
+  <meta name="description" content="Minimal, premium catalog of OLIVA Group mobile apps for iPhone and Android." />
   <style>
-  body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    margin: 0;
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background: #f9f9f9;
-    color: #333;
-  }
-  main {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 2rem;
-  }
-  img.logo {
-    width: 120px;
-    height: auto;
-    margin-bottom: 1rem;
-  }
-  h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-    color: #2c3e50;
-  }
-  p.description {
-    font-size: 1.2rem;
-    margin: 0 0 1.5rem 0;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    color: #555;
-  }
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0 auto;
-    max-width: 300px;
-  }
-  ul li {
-    margin: 0.75rem 0;
-  }
-  ul li:first-child {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-  }
-  a {
-    text-decoration: none;
-    color: #2980b9;
-    font-weight: bold;
-    transition: color 0.3s ease;
-  }
-  a:hover {
-    color: #1abc9c;
-  }
-  footer {
-    background: #2c3e50;
-    color: white;
-    padding: 1rem 0;
-    font-size: 0.9rem;
-  }
+    :root {
+      --bg: #f5f3ef;
+      --bg-2: #faf9f7;
+      --surface: rgba(255,255,255,0.74);
+      --surface-strong: rgba(255,255,255,0.9);
+      --text: #171717;
+      --muted: #6f6a63;
+      --line: rgba(23,23,23,0.08);
+      --shadow: 0 18px 50px rgba(0,0,0,0.06);
+      --shadow-soft: 0 8px 24px rgba(0,0,0,0.04);
+      --radius-xl: 30px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --max: 1180px;
+      --gold: #b8914f;
+      --dark: #111111;
+      --play: #0a9d62;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(184,145,79,0.10), transparent 28%),
+        radial-gradient(circle at top right, rgba(0,0,0,0.03), transparent 24%),
+        linear-gradient(180deg, var(--bg-2) 0%, var(--bg) 100%);
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(calc(100% - 28px), var(--max));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(250,249,247,0.72);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(255,255,255,0.65);
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(145deg, #1d1d1d, #3a3328);
+      color: #fff;
+      box-shadow: 0 14px 30px rgba(0,0,0,0.12);
+      font-size: 16px;
+    }
+
+    .top-actions {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .mini-link {
+      padding: 10px 14px;
+      border-radius: 999px;
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: 0.2s ease;
+    }
+
+    .mini-link:hover { background: rgba(255,255,255,0.72); color: var(--text); }
+
+    .hero {
+      padding: 42px 0 22px;
+    }
+
+    .hero-shell {
+      position: relative;
+      overflow: hidden;
+      border-radius: 34px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.84), rgba(255,255,255,0.68));
+      border: 1px solid rgba(255,255,255,0.82);
+      box-shadow: var(--shadow);
+      padding: 34px;
+    }
+
+    .hero-shell::before {
+      content: "";
+      position: absolute;
+      inset: auto -40px -60px auto;
+      width: 220px;
+      height: 220px;
+      border-radius: 999px;
+      background: radial-gradient(circle, rgba(184,145,79,0.18), transparent 68%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(184,145,79,0.10);
+      color: #8c6b36;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 16px 0 12px;
+      max-width: 10ch;
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      line-height: 0.95;
+      letter-spacing: -0.055em;
+    }
+
+    .hero-copy {
+      margin: 0;
+      max-width: 700px;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 1.02rem;
+    }
+
+    .hero-row {
+      margin-top: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .stat-pill {
+      min-width: 132px;
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.72);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .stat-pill strong {
+      display: block;
+      font-size: 1.28rem;
+      letter-spacing: -0.03em;
+      margin-bottom: 2px;
+    }
+
+    .stat-pill span {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .hero-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 14px;
+      background: linear-gradient(145deg, #1c1c1c, #38332a);
+      color: #fff;
+      font-weight: 700;
+      box-shadow: 0 14px 30px rgba(0,0,0,0.12);
+    }
+
+    .section {
+      padding: 8px 0 34px;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      letter-spacing: -0.04em;
+    }
+
+    .section-head p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+
+    .search-wrap {
+      position: relative;
+      flex: 1 1 320px;
+    }
+
+    .search-wrap input {
+      width: 100%;
+      min-height: 52px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.8);
+      border-radius: 18px;
+      padding: 0 18px 0 48px;
+      font-size: 1rem;
+      color: var(--text);
+      outline: none;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .search-wrap input:focus {
+      border-color: rgba(184,145,79,0.35);
+      box-shadow: 0 12px 30px rgba(184,145,79,0.08);
+    }
+
+    .search-wrap svg {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 18px;
+      height: 18px;
+      fill: #9c9489;
+    }
+
+    .result-count {
+      color: var(--muted);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .apps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .app-card {
+      position: relative;
+      border-radius: 26px;
+      padding: 22px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.82), rgba(255,255,255,0.68));
+      border: 1px solid rgba(255,255,255,0.88);
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+      backdrop-filter: blur(14px);
+    }
+
+    .app-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 22px 58px rgba(0,0,0,0.08);
+    }
+
+    .app-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .app-name {
+      margin: 0;
+      font-size: 1.12rem;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+    }
+
+    .app-sub {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-top: 6px;
+    }
+
+    .emoji-badge {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(145deg, rgba(184,145,79,0.12), rgba(23,23,23,0.03));
+      border: 1px solid rgba(184,145,79,0.12);
+      font-size: 1.45rem;
+      flex: 0 0 auto;
+    }
+
+    .store-links {
+      margin-top: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .store-btn {
+      min-height: 46px;
+      border-radius: 14px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      color: #fff;
+      font-size: 0.94rem;
+      font-weight: 700;
+      transition: transform 0.18s ease, opacity 0.18s ease;
+    }
+
+    .store-btn:hover { transform: translateY(-1px); opacity: 0.97; }
+    .store-btn.play { background: linear-gradient(145deg, #0ea56a, #0a8d5b); }
+    .store-btn.apple { background: linear-gradient(145deg, #121212, #3a3a3a); }
+
+    .empty-state {
+      display: none;
+      padding: 26px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.78);
+      border: 1px solid rgba(255,255,255,0.88);
+      box-shadow: var(--shadow);
+      color: var(--muted);
+      text-align: center;
+      margin-bottom: 18px;
+    }
+
+    .footer {
+      padding: 4px 0 34px;
+    }
+
+    .footer-card {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 20px 22px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.78);
+      border: 1px solid rgba(255,255,255,0.86);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .footer-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .footer-link {
+      padding: 12px 16px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.78);
+      border: 1px solid var(--line);
+      font-weight: 700;
+    }
+
+    @media (max-width: 980px) {
+      .apps-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 700px) {
+      .container { width: min(calc(100% - 18px), var(--max)); }
+      .hero-shell { padding: 24px 18px; border-radius: 26px; }
+      .apps-grid { grid-template-columns: 1fr; }
+      .store-links { grid-template-columns: 1fr; }
+      .mini-link { display: none; }
+      .brand-mark { width: 36px; height: 36px; }
+    }
   </style>
 </head>
 <body>
-  <main>
-    <img src="oliva.png" alt="OLIVA Logo" class="logo" />
-    <h1>OLIVA Group</h1>
-    <p class="description">
-      OLIVA GROUP drives excellence in property development, ensuring profitable outcomes and long-term security through expert design and management. We also lead in creating mobile applications focused on health, nutrition, and user-centred design, delivering dependable and professional results.
-    </p>
-    <ul>
-      <li><a href="property.html">Property</a></li>
-      <li><a href="mobile-apps.html">Mobile App Development<br>(Android & iOS)</a></li>
-    </ul>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="#top" aria-label="OLIVA Group home">
+        <span class="brand-mark">OL</span>
+        <span>OLIVA Group</span>
+      </a>
+      <div class="top-actions">
+        <a class="mini-link" href="#apps">Apps</a>
+        <a class="mini-link" href="#about">About</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container">
+        <div class="hero-shell">
+          <span class="eyebrow">Premium app catalog</span>
+          <h1>Minimal design. All your apps in one place.</h1>
+          <p class="hero-copy">A cleaner, more premium landing page for the OLIVA app collection with fast browsing, polished cards, and direct links to iPhone and Android downloads.</p>
+          <div class="hero-row">
+            <div class="hero-stats">
+              <div class="stat-pill"><strong id="appCount">34</strong><span>apps listed</span></div>
+              <div class="stat-pill"><strong>iOS + Android</strong><span>store links on every card</span></div>
+            </div>
+            <a class="hero-button" href="#apps">Browse apps</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2 id="apps">Apps</h2>
+            <p>Search by name and open any app directly in the store.</p>
+          </div>
+        </div>
+
+        <div class="toolbar">
+          <label class="search-wrap" aria-label="Search apps">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 4a6 6 0 1 0 0 12 6 6 0 0 0 0-12Zm-8 6a8 8 0 1 1 14.32 4.906l5.387 5.387-1.414 1.414-5.387-5.387A8 8 0 0 1 2 10Z"/></svg>
+            <input id="searchInput" type="search" placeholder="Search apps..." />
+          </label>
+          <div class="result-count"><span id="visibleCount">34</span> shown</div>
+        </div>
+
+        <div class="empty-state" id="emptyState">No apps match that search.</div>
+
+        <div class="apps-grid" id="appsGrid">
+          <article class="app-card" data-name="Acrea">
+            <div class="app-top"><div><h3 class="app-name">Acrea</h3><div class="app-sub">Creative tools</div></div><div class="emoji-badge">✨</div></div>
+            <div class="store-links"><a class="store-btn play" href="https://play.google.com/store/apps/details?id=com.acrea_by_oliva" target="_blank" rel="noopener">Google Play</a><a class="store-btn apple" href="https://apps.apple.com/us/app/acrea-by-oliva/id6759412295" target="_blank" rel="noopener">App Store</a></div>
+          </article>
+
+          <article class="app-card" data-name="Antibiotics">
+            <div class="app-top"><div><h3 class="app-name">Antibiotics</h3><div class="app-sub">Reference</div></div><div class="emoji-badge">💊</div></div>
+            <div class="store-links"><a class="store-btn play" href="https://play.google.com/store/apps/details?id=com.antibiotics_by_oliva" target="_blank" rel="noopener">Google Play</a><a class="store-btn apple" href="https://apps.apple.com/us/app/antibiotics-by-oliva/id6680196152" target="_blank" rel="noopener">App Store</a></div>
+          </article>
+
+          <article class="app-card" data-name="Astrology">
+            <div class="app-top"><div><h3 class="app-name">Astrology</h3><div class="app-sub">Spiritual guidance</div></div><div class="emoji-badge">🔮</div></div>
+            <div class="store-links"><a class="store-btn play" href="https://play.google.com/store/apps/details?id=com.astrology_by_oliva" target="_blank" rel="noopener">Google Play</a><a class="store-btn apple" href="https://apps.apple.com/us/app/astrology-by-oliva/id6746717155" target="_blank" rel="noopener">App Store</a></div>
+          </article>
+
+          <article class="app-card" data-name="Cats">
+            <div class="app-top"><div><h3 class="app-name">Cats</h3><div class="app-sub">Animals</div></div><div class="emoji-badge">🐱</div></div>
+            <div class="store-links"><a class="store-btn play" href="https://play.google.com/store/apps/details?id=com.cats_by_oliva" target="_blank" rel="noopener">Google Play</a><a class="store-btn apple" href="https://apps.apple.com/us/app/cats-by-oliva/id6742685133" target="_blank" rel="noopener">App Store</a></div>
+          </article>
+
+          <article class="app-card" data-name="Cells">
+            <div class="app-top"><div><h3 class="app-name">Cells</h3><div class="app-sub">Science</div></div><div class="emoji-badge">🧬</div></div>
+            <div class="store-links"><a class="store-btn play" href="https://play.google.com/store/apps/details?id=com.cells_by_oliva" target="_blank" rel="noopener">Google Play</a><a class="store-btn apple" href="https://apps.apple.com/us/app/cells-by-oliva/id6749825867" target="_blank" rel="noopener">App Store</a></div>
+          </article>
+
+          <article class="app-card" data-name="Citizenship Test">
+            <div class="app-top"><div><h3 class="app-name">Citizenship Test</h3><div class="app-sub">Learning</div></div><div class="emoji-badge">📘</div></div>
+            <div class="store-links"><a class="store-btn play" href="https://play.google.com/store/apps/details?id=com.citizenship_by_oliva" target="_blank" rel="noopener">Google Play</a><a class="store-btn apple" href="https://apps.apple.com/us/app/citizenship-test/id6756912713" target="_blank" rel="noopener">App Store</a></div>
+          </article>
+
+          <article class="app-card" data-name="Cryptocurrencies">
+            <div class="app-top"><div><h3 class="app-name">Cryptocurrencies</h3><div class="app-sub">Finance</div></div><div class="emoji-badge">₿</div></div>
+            <div class="store-links"><a class="store-btn play" href="https://play.google.com/store/apps/details?id=com.crypto_by_oliva" target="_blank" rel="noopener">Google Play</a><a class="store-btn apple" href="https://apps.apple.com/us/app/crypto-by-oliva/id6742685229" target="_blank" rel="noopener">App Store</a></div>
+          </article>
+
+          <article class="app-card" data-name="Currencies">
+            <div class="app-top"><div><h3 class="app-name">Currencies</h3><div class="app-sub">Money tools</div></div><div class="emoji-badge">💱</div></div>
+            <div class="store-links"><a class="store-btn play" href="https://play.google.com/store/apps/details?id=com.currencies_by_oliva" target="_blank" rel="noopener">Google Play</a><a class="store-btn apple" href="https://apps.apple.com/us/app/currencies-by-oliva/id6751114928" target="_blank" rel="noopener">App Store</a></div>
+          </article>
+
+          <article class="app-card" data-name="Detector">
+            <div class="app-top"><div><h3 class="app-name">Detector</h3><div class="app-sub">Tools</div></div><div class="emoji-badge">📡</div></div>
+            <div class="store-links"><a class="store-btn play" href="https://play.google.com/store/apps/details?id=com.detector_by_oliva" target="_blank" rel="noopener">Google Play</a><a class="store-btn apple" href="https://apps.apple.com/us/app/detector-by-oliva/id6758643348" target="_blank" rel="noopener">App Store</a></div>
+          </article>
+
+          <article class="app-card" data-name="Dinosaurs">
+            <div class="app-top"><div><h3 class="app-name">Dinosaurs</h3><div class="app-sub">Animals & history</div></div><div class="emoji-badge">🦖</div></div>
+            <div class="store-links"><a class="store-btn play" href="https://play.google.com/store/apps/details?id=com.dinosaurs_by_oliva" target="_blank" rel="noopener">Google Play</a><a class="store-btn apple" href="https://apps.apple.com/us/app/dinosaurs-by-oliva/id6746718846" target="_blank" rel="noopener">App Store</a></div>
+          </article>
+
+          <article class="app-card" data-name="Diseases">
+            <div class="app-top"><div><h3 class="app-name">Diseases</h3><div class="app-sub">Reference</div></div><div class="emoji-badge">🩺</div></div>
+            <div class="store-links"><a class="store-btn play" href="https://play.google.com/store/apps/details?id=com.diseases_by_oliva" target="_blank" rel="noopener">Google Play</a><a class="store-btn apple" href="https://apps.apple.com/us/app/diseases-by-oliva/id6670185689" target="_blank" rel="noopener">App Store</a></div>
+          </article>
+
+          <article class="app-card" data-name="Dogs">
+            <div class="app-top"><div><h3 class="app-name">Dogs</h3><div class="app-sub">Animals</div></div><div class="emoji-badge">🐶</div></div>
+            <div class="store-links"><a class="store-btn play" href="https://play.google.com/store/apps/details?id=com.dogs_by_oliva" target="_blank" rel="noopener">Google Play</a><a class="store-btn apple" href="https://apps.apple.com/us/app/dogs-by-oliva/id6742685451" target="_blank" rel="noopener">App Store</a></div>
+          </article>
+
+          <article class="app-card" data-name="Driving Test">
+            <div class="app-top"><div><h3 class="app-name">Driving Test</h3><div class="app-sub">Learning</div></div><div class="emoji-badge">🚗</div></div>
+            <div class="store-links"><a class="store-btn play" href="https://play.google.com/store/apps/details?id=com.driving_by_oliva" target="_blank" rel="noopener">Google Play</a><a class="store-btn apple" href="https://apps.apple.com/us/app/driving-test/id6757230065" target="_blank" rel="noopener">App Store</a></div>
+          </article>
+
+          <article class="app-card" data-name="E Numbers">
+            <div class="app-top"><div><h3 class="app-name">E Numbers</h3><div class="app-sub">Food reference</div></div><div class="emoji-badge">🧾</div></div>
+            <div class="store-links"><a class="store-btn play" href="https://play.google.com/store/apps/details?id=com.e_number_by_oliva" target="_blank" rel="noopener">Google Play</a><a class="store-btn apple" href="https://apps.apple.com/us/app/e-number-by-oliva/id6478639811" target="_blank" rel="noopener">App Store</a></div>
+          </article>
+
+          <article class="app-card" data-name="Fasting Methods">
+            <div class="app-top"><div><h3 class="app-name">Fasting Methods</h3><div class="app-sub">Wellness</div></div><div class="emoji-badge">⏳</div></div>
+            <div class="store-links"><a class="store-btn play" href="https://play.google.com/store/apps/details?id=com.fasting_by_oliva" target="_blank" rel="noopener">Google Play</a><a class="store-btn apple" href="https://apps.apple.com/us/app/fasting-by-oliva/id6742858811" target="_blank" rel="noopener">App Store</a></div>
+          </article>
+
+          <article class="app-card" data-name="Finances">
+            <div class="app-top"><div><h3 class="app-name">Finances</h3><div class="app-sub">Money tools</div></div><div class="emoji-badge">📈</div></div>
+            <div class="store-links"><a class="store-btn play" href="https://play.google.com/store/apps/details?id=com.finances_by_oliva" target="_blank" rel="noopener">Google Play</a><a class="store-btn apple" href="https://apps.apple.com/us/app/finances-by-oliva/id6742321942" target="_blank" rel="noopener">App Store</a></div>
+          </article>
+
+          <article class="app-card" data-name="Hormones">
+            <div class="app-top"><div><h3 class="app-name">Hormones</h3><div class="app-sub">Health</div></div><div class="emoji-badge">⚗️</div></div>
+            <div class="store-links"><a class="store-btn play" href="https://play.google.com/store/apps/details?id=com.hormones_by_oliva" target="_blank" rel="noopener">Google Play</a><a class="store-btn apple" href="https://apps.apple.com/us/app/hormones-by-oliva/id6739848653" target="_blank" rel="noopener">App Store</a></div>
+          </article>
+
+          <article class="app-card" data-name="Lunar Calendar">
+            <div class="app-top"><div><h3 class="app-name">Lunar Calendar</h3><div class="app-sub">Daily lunar guidance</div></div><div class="emoji-badge">🌙</div></div>
+            <div class="store-links"><a class="store-btn play" href="https://play.google.com/store/apps/details?id=com.lunar_calendar_by_oliva" target="_blank" rel="noopener">Google Play</a><a class="store-btn apple" href="https://apps.apple.com/us/app/lunar-calendar-by-oliva/id6670185937" target="_blank" rel="noopener">App Store</a></div>
+          </article>
+
+          <article class="app-card" data-name="Mushrooms">
+            <div class="app-top"><div><h3 class="app-name">Mushrooms</h3><div class="app-sub">Nature reference</div></div><div class="emoji-badge">🍄</div></div>
+            <div class="store-links"><a class="store-btn play" href="https://play.google.com/store/apps/details?id=com.mushrooms_by_oliva" target="_blank" rel="noopener">Google Play</a><a class="store-btn apple" href="https://apps.apple.com/us/app/mushrooms-by-oliva/id6742183154" target="_blank" rel="noopener">App Store</a></div>
+          </article>
+
+          <article class="app-card" data-name="Night Dreams">
+            <div class="app-top"><div><h3 class="app-name">Night Dreams</h3><div class="app-sub">Dream meanings</div></div><div class="emoji-badge">🌌</div></div>
+            <div class="store-links"><a class="store-btn play" href="https://play.google.com/store/apps/details?id=com.dreams_by_oliva" target="_blank" rel="noopener">Google Play</a><a class="store-btn apple" href="https://apps.apple.com/us/app/dreams-by-oliva/id6742685338" target="_blank" rel="noopener">App Store</a></div>
+          </article>
+
+          <article class="app-card" data-name="Numerology">
+            <div class="app-top"><div><h3 class="app-name">Numerology</h3><div class="app-sub">Spiritual guidance</div></div><div class="emoji-badge">🔢</div></div>
+            <div class="store-links"><a class="store-btn play" href="https://play.google.com/store/apps/details?id=com.numerology_by_oliva" target="_blank" rel="noopener">Google Play</a><a class="store-btn apple" href="https://apps.apple.com/us/app/numerology-by-oliva/id6742685515" target="_blank" rel="noopener">App Store</a></div>
+          </article>
+
+          <article class="app-card" data-name="Nutrients">
+            <div class="app-top"><div><h3 class="app-name">Nutrients</h3><div class="app-sub">Nutrition</div></div><div class="emoji-badge">🥗</div></div>
+            <div class="store-links"><a class="store-btn play" href="https://play.google.com/store/apps/details?id=com.nutrients_by_oliva" target="_blank" rel="noopener">Google Play</a><a class="store-btn apple" href="https://apps.apple.com/us/app/nutrients-by-oliva/id6670186011" target="_blank" rel="noopener">App Store</a></div>
+          </article>
+
+          <article class="app-card" data-name="One Pot Meal">
+            <div class="app-top"><div><h3 class="app-name">One Pot Meal</h3><div class="app-sub">Cooking</div></div><div class="emoji-badge">🍲</div></div>
+            <div class="store-links"><a class="store-btn play" href="https://play.google.com/store/apps/details?id=com.onepotmeal_by_oliva" target="_blank" rel="noopener">Google Play</a><a class="store-btn apple" href="https://apps.apple.com/us/app/onepotmeal-by-oliva/id6741917912" target="_blank" rel="noopener">App Store</a></div>
+          </article>
+
+          <article class="app-card" data-name="Periods">
+            <div class="app-top"><div><h3 class="app-name">Periods</h3><div class="app-sub">Health tracking</div></div><div class="emoji-badge">🩷</div></div>
+            <div class="store-links"><a class="store-btn play" href="https://play.google.com/store/apps/details?id=com.periods_by_oliva" target="_blank" rel="noopener">Google Play</a><a class="store-btn apple" href="https://apps.apple.com/us/app/periods-by-oliva/id6751114908" target="_blank" rel="noopener">App Store</a></div>
+          </article>
+
+          <article class="app-card" data-name="Phobias">
+            <div class="app-top"><div><h3 class="app-name">Phobias</h3><div class="app-sub">Mind & health</div></div><div class="emoji-badge">🧠</div></div>
+            <div class="store-links"><a class="store-btn play" href="https://play.google.com/store/apps/details?id=com.phobias_by_oliva" target="_blank" rel="noopener">Google Play</a><a class="store-btn apple" href="https://apps.apple.com/us/app/phobias-by-oliva/id6742685294" target="_blank" rel="noopener">App Store</a></div>
+          </article>
+
+          <article class="app-card" data-name="Pigments">
+            <div class="app-top"><div><h3 class="app-name">Pigments</h3><div class="app-sub">Colors & art</div></div><div class="emoji-badge">🎨</div></div>
+            <div class="store-links"><a class="store-btn play" href="https://play.google.com/store/apps/details?id=com.pigments_by_oliva" target="_blank" rel="noopener">Google Play</a><a class="store-btn apple" href="https://apps.apple.com/us/app/pigments-by-oliva/id6747997645" target="_blank" rel="noopener">App Store</a></div>
+          </article>
+
+          <article class="app-card" data-name="Probiotics">
+            <div class="app-top"><div><h3 class="app-name">Probiotics</h3><div class="app-sub">Wellness</div></div><div class="emoji-badge">🦠</div></div>
+            <div class="store-links"><a class="store-btn play" href="https://play.google.com/store/apps/details?id=com.probiotics_by_oliva" target="_blank" rel="noopener">Google Play</a><a class="store-btn apple" href="https://apps.apple.com/us/app/probiotics-by-oliva/id6720753184" target="_blank" rel="noopener">App Store</a></div>
+          </article>
+
+          <article class="app-card" data-name="PubDev">
+            <div class="app-top"><div><h3 class="app-name">PubDev</h3><div class="app-sub">Developer tools</div></div><div class="emoji-badge">💻</div></div>
+            <div class="store-links"><a class="store-btn play" href="https://play.google.com/store/apps/details?id=com.pubdev_by_oliva" target="_blank" rel="noopener">Google Play</a><a class="store-btn apple" href="https://apps.apple.com/us/app/pubdev-by-oliva/id6758752692" target="_blank" rel="noopener">App Store</a></div>
+          </article>
+
+          <article class="app-card" data-name="Runes">
+            <div class="app-top"><div><h3 class="app-name">Runes</h3><div class="app-sub">Spiritual guidance</div></div><div class="emoji-badge">🪄</div></div>
+            <div class="store-links"><a class="store-btn play" href="https://play.google.com/store/apps/details?id=com.runes_by_oliva" target="_blank" rel="noopener">Google Play</a><a class="store-btn apple" href="https://apps.apple.com/us/app/runes-by-oliva/id6746326376" target="_blank" rel="noopener">App Store</a></div>
+          </article>
+
+          <article class="app-card" data-name="Steroids">
+            <div class="app-top"><div><h3 class="app-name">Steroids</h3><div class="app-sub">Reference</div></div><div class="emoji-badge">🏋️</div></div>
+            <div class="store-links"><a class="store-btn play" href="https://play.google.com/store/apps/details?id=com.steroids_by_oliva" target="_blank" rel="noopener">Google Play</a><a class="store-btn apple" href="https://apps.apple.com/us/app/steroids-by-oliva/id6720753282" target="_blank" rel="noopener">App Store</a></div>
+          </article>
+
+          <article class="app-card" data-name="Stones">
+            <div class="app-top"><div><h3 class="app-name">Stones</h3><div class="app-sub">Nature & meanings</div></div><div class="emoji-badge">💎</div></div>
+            <div class="store-links"><a class="store-btn play" href="https://play.google.com/store/apps/details?id=com.stones_by_oliva" target="_blank" rel="noopener">Google Play</a><a class="store-btn apple" href="https://apps.apple.com/us/app/stones-by-oliva/id6742685417" target="_blank" rel="noopener">App Store</a></div>
+          </article>
+
+          <article class="app-card" data-name="Tarot">
+            <div class="app-top"><div><h3 class="app-name">Tarot</h3><div class="app-sub">Spiritual guidance</div></div><div class="emoji-badge">🃏</div></div>
+            <div class="store-links"><a class="store-btn play" href="https://play.google.com/store/apps/details?id=com.tarot_by_oliva" target="_blank" rel="noopener">Google Play</a><a class="store-btn apple" href="https://apps.apple.com/us/app/tarot-by-oliva/id6742685616" target="_blank" rel="noopener">App Store</a></div>
+          </article>
+
+          <article class="app-card" data-name="Timezones">
+            <div class="app-top"><div><h3 class="app-name">Timezones</h3><div class="app-sub">Utilities</div></div><div class="emoji-badge">🌍</div></div>
+            <div class="store-links"><a class="store-btn play" href="https://play.google.com/store/apps/details?id=com.timezones_by_oliva" target="_blank" rel="noopener">Google Play</a><a class="store-btn apple" href="https://apps.apple.com/us/app/timezones-by-oliva/id6751114970" target="_blank" rel="noopener">App Store</a></div>
+          </article>
+
+          <article class="app-card" data-name="Units Converter">
+            <div class="app-top"><div><h3 class="app-name">Units Converter</h3><div class="app-sub">Utilities</div></div><div class="emoji-badge">📐</div></div>
+            <div class="store-links"><a class="store-btn play" href="https://play.google.com/store/apps/details?id=com.units_by_oliva" target="_blank" rel="noopener">Google Play</a><a class="store-btn apple" href="https://apps.apple.com/us/app/units-by-oliva/id6751115020" target="_blank" rel="noopener">App Store</a></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="footer">
+      <div class="container">
+        <div class="footer-card">
+          <p>© 2026 OLIVA Group. Minimal, premium app discovery for your full collection.</p>
+          <a class="footer-link" href="#top">Back to top</a>
+        </div>
+      </div>
+    </section>
   </main>
-  <footer>
-    &copy; 2026 OLIVA Group
-  </footer>
+
+  <script>
+    const searchInput = document.getElementById('searchInput');
+    const cards = Array.from(document.querySelectorAll('.app-card'));
+    const visibleCount = document.getElementById('visibleCount');
+    const appCount = document.getElementById('appCount');
+    const emptyState = document.getElementById('emptyState');
+
+    appCount.textContent = cards.length;
+    visibleCount.textContent = cards.length;
+
+    searchInput.addEventListener('input', function () {
+      const query = this.value.trim().toLowerCase();
+      let shown = 0;
+
+      cards.forEach(card => {
+        const name = (card.dataset.name || '').toLowerCase();
+        const match = name.includes(query);
+        card.style.display = match ? '' : 'none';
+        if (match) shown += 1;
+      });
+
+      visibleCount.textContent = shown;
+      emptyState.style.display = shown === 0 ? 'block' : 'none';
+    });
+  </script>
 </body>
 </html>
