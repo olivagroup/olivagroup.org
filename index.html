@@ -191,8 +191,6 @@ height:18px;
 const savedLang = localStorage.getItem("lang");
 const browserLang = (navigator.languages && navigator.languages[0]) || navigator.language || "en";
 const preferredLang = (savedLang || browserLang).toLowerCase().split("-")[0];
-const lang = translations[preferredLang] ? preferredLang : "en";
-document.documentElement.lang = lang;
 
 const translations = {
   en: {
@@ -1497,9 +1495,10 @@ sub_utilities: "实用工具"
   
 };
 
+const lang = translations[preferredLang] ? preferredLang : "en";
 const t = translations[lang] || translations.en;
 
-document.documentElement.lang = translations[lang] ? lang : "en";
+document.documentElement.lang = lang;
 document.getElementById("heroTitle").textContent = t.heroTitle;
 document.getElementById("heroText").textContent = t.heroText;
 
@@ -1512,7 +1511,7 @@ const apps = [
   ["app_citizenship_name","sub_learning","citizenship_by_oliva","https://play.google.com/store/apps/details?id=com.citizenship_by_oliva","https://apps.apple.com/us/app/citizenship-test/id6756912713"],
   ["app_crypto_name","sub_finance","crypto_by_oliva","https://play.google.com/store/apps/details?id=com.crypto_by_oliva","https://apps.apple.com/us/app/crypto-by-oliva/id6742685229"],
   ["app_currencies_name","sub_money_tools","currencies_by_oliva","https://play.google.com/store/apps/details?id=com.currencies_by_oliva","https://apps.apple.com/us/app/currencies-by-oliva/id6751114928"],
-  ["app_detector_name","sub_tools","detector_by_oliva","https://play.google.com/store/apps.details?id=com.detector_by_oliva","https://apps.apple.com/us/app/detector-by-oliva/id6758643348"],
+  ["app_detector_name","sub_tools","detector_by_oliva","https://play.google.com/store/apps/details?id=com.detector_by_oliva","https://apps.apple.com/us/app/detector-by-oliva/id6758643348"],
   ["app_dinosaurs_name","sub_animals_history","dinosaurs_by_oliva","https://play.google.com/store/apps/details?id=com.dinosaurs_by_oliva","https://apps.apple.com/us/app/dinosaurs-by-oliva/id6746718846"],
   ["app_diseases_name","sub_reference","diseases_by_oliva","https://play.google.com/store/apps/details?id=com.diseases_by_oliva","https://apps.apple.com/us/app/diseases-by-oliva/id6670185689"],
   ["app_dogs_name","sub_animals","dogs_by_oliva","https://play.google.com/store/apps/details?id=com.dogs_by_oliva","https://apps.apple.com/us/app/dogs-by-oliva/id6742685451"],
