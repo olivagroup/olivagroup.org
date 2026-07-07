@@ -40,38 +40,50 @@ border-bottom:1px solid var(--line);
 
 .topbar-inner{
 display:flex;
+justify-content:center;
 align-items:center;
-justify-content:space-between;
-padding:14px 0;
+padding:18px 0;
 }
 
 .brand{
 display:flex;
+flex-direction:column;
 align-items:center;
-gap:12px;
+justify-content:center;
+gap:10px;
 font-weight:700;
+text-align:center;
 }
 
 .brand-logo{
-width:40px;
-height:40px;
-border-radius:12px;
+width:56px;
+height:56px;
+border-radius:16px;
 object-fit:contain;
 display:block;
 }
 
 .hero{
-padding:40px 0 20px;
+padding:56px 0 32px;
+text-align:center;
+display:flex;
+flex-direction:column;
+align-items:center;
 }
 
 .hero h1{
-font-size:40px;
-margin:10px 0;
+font-size:42px;
+margin:12px 0;
+line-height:1.15;
+font-weight:700;
 }
 
 .hero p{
+max-width:520px;
+margin:0 auto;
 color:var(--muted);
-max-width:600px;
+font-size:17px;
+line-height:1.6;
 }
 
 .toolbar{
@@ -200,8 +212,8 @@ const preferredLang = (savedLang || browserLang).toLowerCase().split("-")[0];
 
 const translations = {
   en: {
-    heroTitle: "Explore the OLIVA app portfolio",
-    heroText: "Discover OLIVA Group’s collection of mobile apps across wellness, lifestyle, learning, and reference - with direct links for iPhone and Android.",
+    heroTitle: "Discover OLIVA Apps",
+    heroText: "Quality mobile apps for everyday life.",
     app_acrea_name: "Acrea",
     app_antibiotics_name: "Antibiotics",
     app_astrology_name: "Astrology",
