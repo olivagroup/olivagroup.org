@@ -1796,7 +1796,8 @@ const lang = translations[preferredLang] ? preferredLang : "en";
 const t = translations[lang] || translations.en;
 
 document.documentElement.lang = lang;
-document.getElementById("heroTitle").textContent = t.heroTitle;
+const heroTitle = document.getElementById("heroTitle");
+if (heroTitle) heroTitle.textContent = t.heroTitle;
 document.getElementById("heroText").textContent = t.heroText;
 
 const apps = [
