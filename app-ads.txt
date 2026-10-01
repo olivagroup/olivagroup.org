@@ -1335,7 +1335,7 @@ ucfunnel.com, par-E2B3A33EAA4286BEF7ADD9AA28A922D2, RESELLER
 uis.mobfox.com, 1750, RESELLER, 5529a3d1f59865be
 uis.mobfox.com, 82593, RESELLER, 5529a3d1f59865be
 undertone.com, 4108, RESELLER
-unity.com, 5650685, RESELLER, 96cabb5fbdde37a7
+unity.com, 5650685, DIRECT, 96cabb5fbdde37a7
 unity3d.com, 16768202129111, RESELLER
 unity3d.com, 5650685, RESELLER
 unity3d.com, 66fcbdefcc63b1867dc5cca6, RESELLER
