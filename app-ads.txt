@@ -411,6 +411,7 @@ google.com, pub-5060663379040713, RESELLER, f08c47fec0942fa0
 google.com, pub-5717092533913515, RESELLER, f08c47fec0942fa0
 google.com, pub-6346866704322274, RESELLER, f08c47fec0942fa0
 google.com, pub-7452201096415972, RESELLER, f08c47fec0942fa0
+google.com, pub-9173480769241678, DIRECT, f08c47fec0942fa0
 google.com, pub-9173480769241678, RESELLER, f08c47fec0942fa0
 grouprvn.com, 420212011, RESELLER
 growintech.co, 102275, RESELLER, 9d8dfe5c6b00fb37
@@ -466,6 +467,7 @@ inmobi.com, 23800006c42e4a739966c05ca0ac4854, RESELLER, 83e75a7ae333ca9d
 inmobi.com, 23d316d3d980453d8ea0dcf9caec4078, RESELLER, 83e75a7ae333ca9d
 inmobi.com, 30f3830cfef249a3ad46ee1a0bba7af3, RESELLER, 83e75a7ae333ca9d
 inmobi.com, 33f042dcf10549ae9fb1b9e2ee0ecfc3, RESELLER, 83e75a7ae333ca9d
+inmobi.com, 34426528ac414a21bf43c1cfbde97622, DIRECT, 83e75a7ae333ca9d
 inmobi.com, 34426528ac414a21bf43c1cfbde97622, RESELLER, 83e75a7ae333ca9d
 inmobi.com, 3a4f7da341dd490cbb7dde02b126275e, RESELLER, 83e75a7ae333ca9d
 inmobi.com, 3af76ebd8ed44d04b01d827c6f3bb5b4, RESELLER, 83e75a7ae333ca9d
@@ -1291,6 +1293,7 @@ triplelift.com, 10522, RESELLER, 6c33edb13117fd86
 triplelift.com, 11457, RESELLER, 6c33edb13117fd86
 triplelift.com, 11474, RESELLER, 6c33edb13117fd86
 triplelift.com, 11656, RESELLER, 6c33edb13117fd86
+triplelift.com, 11883, RESELLER, 6c33edb13117fd86
 triplelift.com, 12158, RESELLER, 6c33edb13117fd86
 triplelift.com, 12210-EB, RESELLER, 6c33edb13117fd86
 triplelift.com, 12240, RESELLER, 6c33edb13117fd86
@@ -1353,6 +1356,7 @@ vidazoo.com, 66a936797145df0667ebe4e0, RESELLER, b6ada874b4d7d0b2
 vidazoo.com, 66e04f5e4d7fd89d878d29d2, RESELLER, b6ada874b4d7d0b2
 vidazoo.com, 6763f7632381fc1150a4f706, RESELLER
 vidazoo.com, 6a3384a48eca8f6ddad62520, RESELLER, b6ada874b4d7d0b2
+vidazoo.com, 6ab4e4454da99de3c4d515c9, RESELLER, b6ada874b4d7d0b2
 video.unrulymedia.com, 1058378980, RESELLER
 video.unrulymedia.com, 123476257, RESELLER
 video.unrulymedia.com, 1286320118, RESELLER
